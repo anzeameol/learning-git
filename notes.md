@@ -121,21 +121,110 @@ git rm 命令后面可以列出文件或者目录的名字，也可以使用 glo
 \* = *
 
 
+git log
+--stat
+--pretty
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+
+记住，在 Git 中任何 已提交 的东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 --amend 选
+项覆盖的提交也可以恢复 （阅读 数据恢复 了解数据恢复）。 然而，任何你未提交的东西丢失后很可能再也找不
+到了。
+52
+
+git remote
+
+
+git remote add <shortname> <url>
+
+
+
+git fetch
+git push
+git remote show
+git pull
+git remote rename
+git remote rm
+
+git tag
+Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）。
+轻量标签很像一个不会改变的分支——它只是某个特定提交的引用。
+而附注标签是存储在 Git 数据库中的一个完整对象， 它们是可以被校验的，其中包含打标签者的名字、电子邮件
+地址、日期时间， 此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。 通常会建
+议创建附注标签，这样你可以拥有以上所有信息。但是如果你只是想用一个临时的标签， 或者因为某些原因不
+想要保存这些信息，那么也可以用轻量标签
+
+
+Git 别名 star
 
 
 
 
 
+git 分支
+这与过去大多数版本控制系统形成了鲜明的对比，它们在创建分支时，将所有的项目文件都复制一遍，并保存到
+一个特定的目录。 完成这样繁琐的过程通常需要好几秒钟，有时甚至需要好几分钟。所需时间的长短，完全取
+决于项目的规模。 而在 Git 中，任何规模的项目都能在瞬间创建新分支。 同时，由于每次提交都会记录父对
+象，所以寻找恰当的合并基础（译注：即共同祖先）也是同样的简单和高效。 这些高效的特性使得 Git 鼓励开发
+人员频繁地创建和使用分支。
+
+
+git branch -d
+
+git merge冲突
+
+
+vscode 签出已分离
+
+git branch -v
+git branch -a
+
+git branch --merged
+
+git branch -d / -D
+
+尽可能多创建分支，分支带来的开销非常小
+
+许多使用 Git 的开发者都喜欢使用这种方式来工作，比如只在 master 分支上保留完全稳定的代码——有可能仅
+仅是已经发布或即将发布的代码。 他们还有一些名为 develop 或者 next 的平行分支，被用来做后续开发或者
+测试稳定性——这些分支不必保持绝对稳定，但是一旦达到稳定状态，它们就可以被合并入 master 分支了。 这
+样，在确保这些已完成的主题分支（短期分支，比如之前的 iss53 分支）能够通过所有测试，并且不会引入更
+多 bug 之后，就可以合并入主干分支中，等待下一次的发布。
+
+![Alt text](image-3.png)
 
 
 
 
+从一个远程跟踪分支检出一个本地分支会自动创建所谓的“跟踪分支”（它跟踪的分支叫做“上游分支”）。
+跟踪分支是与远程分支有直接关系的本地分支。 如果在一个跟踪分支上输入 git pull，Git 能自动地识别去哪个服务器上抓取、合并到哪个分支
+
+git checkout -b <branch> <remote>/<branch>
+
+--track
+
+git branch -u origin/serverfix
+
+当设置好跟踪分支后，可以通过简写 @{upstream} 或 @{u} 来引用它的上游分支。 所以在
+master 分支时并且它正在跟踪 origin/master 时，如果愿意的话可以使用 git merge @
+{u} 来取代 git merge origin/master
+
+git branch -vv 如果想要查看设置的所有跟踪分支
+
+可以运行带有 --delete 选项的 git push 命令
+来删除一个远程分支
 
 
+使用merge快速合并
+fast-forward
 
 
+git rebase --onto
+
+git rebase <basebranch> <topicbranch>
 
 
+git rebase teamone/master
 
 
 
@@ -145,6 +234,9 @@ git rm 命令后面可以列出文件或者目录的名字，也可以使用 glo
 
 
 
+.git
+
+![Alt text](image-4.png)
 
 
 

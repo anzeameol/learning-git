@@ -3,8 +3,8 @@
 <p align='right'>2023.9.24</p>
 
 # 前言
-此篇笔记将基于一本叫做Pro Git的书，自顶向下讲述git的使用。  
-学习资源：
+此篇笔记将基于一本叫做Pro Git的书，简短讲述git的使用。  
+## 学习资源
 - [Pro Git](https://git-scm.com/book/en/v2)  /  [Pro Git中文版](https://git-scm.com/book/zh/v2)，推荐阅读1-5章
 - [ohshitgit](https://ohshitgit.com/)，简短的介绍了如何从 Git 错误中恢复
 - [Git for Computer Scientists](https://eagain.net/articles/git-for-computer-scientists/)，简短的介绍了 Git 的数据模型
@@ -18,7 +18,14 @@
 git是一个分布式版本控制软件  
 在项目开发中，它能方便我们跟踪文件的信息，包括谁修改了它、变化了哪些部分；可以让我们更方便地添加、调试新功能，如果不行还可以回退到上一个版本；可以让我们更加方便地团队协作，和其他人进行信息交互，加快工作效率  
 世界上最大的开源代码社区github就是基于git的  
-从短期好处来看，学习git可以方便你进行代码的管理（有一个自己的代码仓库，可以和别人）
+从短期好处来看，学习git可以方便你进行代码的管理、调试，从长远角度来看，将来你一定会和别人协同工作，那么学会使用git很可能是一个必不可少的技能  
+
+## 该如何学git
+我分享一下我的看法：git的功能实在是太多了，想一口气掌握所有的功能实在是不可能。  
+我的建议是可以先掌握基本的用法，在实践中再慢慢摸索。我是通过[学习git的在线游戏](https://learngitbranching.js.org/)上手git的  
+[Pro Git](https://git-scm.com/book/en/v2)  /  [Pro Git中文版](https://git-scm.com/book/zh/v2)电子书详尽介绍了git的使用，可以把它作为可以时常翻阅的手册，如果你愿意看官方文档可以直接`git help <command> / git <command> --help`，简短用法的查看可以`git <command> -h`  
+结合代码托管网站使用（比如github）。拥有一个属于自己的代码仓库，可以放置你的课程项目或者大作业、你的一些新奇的有趣的想法，这不是一件令人激动的事吗？更进一步，你还可以查看别人的项目，在`issue`栏与来自世界各地的开发者参与讨论，感兴趣可以`fork`别人的项目然后添加新的功能，在与项目拥有者的交流中成为朋友，这也是一件美事。  
+如果你也是一名开源爱好者，那么就开始吧。
 
 # intro
 ## 分布式版本控制系统
@@ -239,6 +246,14 @@ git rebase teamone/master
 ![Alt text](image-4.png)
 
 
-
+流程通常如下：
+1. 派生一个项目
+2. 从 master 分支创建一个新分支
+3. 提交一些修改来改进项目
+4. 将这个分支推送到 GitHub 上
+5. 创建一个拉取请求
+6. 讨论，根据实际情况继续修改
+7. 项目的拥有者合并或关闭你的拉取请求
+8. 将更新后的 master 分支同步到你的派生中
 
 

@@ -10,5 +10,5 @@ int main()
 
 void foo()
 {
-    printf("foo\n");
+    printf("fooa\n");
 }

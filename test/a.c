@@ -2,6 +2,13 @@
 
 int main()
 {
-    printf("hello world");
+    foo();
+    printf("hello world\n");
+    foo();
     return 0;
+}
+
+void foo()
+{
+    printf("foo\n");
 }
